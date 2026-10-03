@@ -1,0 +1,13 @@
+[project]
+name = "d2geo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dask>=2026.8.0",
+    "h5py>=3.16.0",
+    "numpy>=2.5.3",
+    "scipy>=1.18.1",
+    "segyio>=1.9.14",
+]
