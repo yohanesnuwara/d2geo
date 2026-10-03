@@ -12,8 +12,8 @@ Edge Detection Attributes for Seismic Data
 import dask.array as da
 import numpy as np
 from scipy import ndimage as ndi
-import util
-from SignalProcess import SignalProcess as sp
+from . import util
+from .SignalProcess import SignalProcess as sp
 
 
 
