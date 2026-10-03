@@ -397,6 +397,14 @@ class ComplexAttributes():
         inst_freq = inst_freq.map_blocks(func, dtype=darray.dtype)
         env = self.envelope(darray)
         
+        # Some processing paths can produce small edge-size differences.
+        # Align both arrays to the shared minimum shape before division.
+        if env.shape != inst_freq.shape:
+            min_shape = tuple(min(e, f) for e, f in zip(env.shape, inst_freq.shape))
+            slices = tuple(slice(0, n) for n in min_shape)
+            env = env[slices]
+            inst_freq = inst_freq[slices]
+
         result = env / inst_freq
                             
         return(result)
